@@ -3,3 +3,4 @@ fastapi
 transformers
 diffusers
 uvicorn
+accelerate
