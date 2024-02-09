@@ -37,7 +37,7 @@ class PromptData(BaseModel):
 def process_prompt(prompt: PromptData):
     result = f"Вы ввели промпт: {prompt.prompt}"
     image = stable_dif(prompt.prompt)
-    
+    image.save(f'../images/{prompt.prompt}.png')
     img_byte_array = BytesIO()
     image.save(img_byte_array, format='PNG')
     image_base64 = base64.b64encode(img_byte_array.getvalue()).decode("utf-8")
